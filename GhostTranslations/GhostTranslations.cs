@@ -49,6 +49,9 @@ namespace GhostTranslations
                 if (DreamWorldDecal != null)
                 {
                     Arc1.transform.parent = DreamWorldDecal.transform;
+                    Arc1.transform.localPosition = Vector3.zero;
+                    Arc1.transform.localRotation = Quaternion.identity;
+                    Arc1.transform.localScale = Vector3.one;
                     Arc1.SetActive(true);
                     BoxCollider collider = DreamWorldDecal.AddComponent<BoxCollider>();
                     collider.center = Vector3.zero;
