@@ -267,21 +267,16 @@ namespace GhostTranslations
                         if (previous != null)
                         {
                             if (previous.opcode == OpCodes.Ldc_I4_1)
-                            {
-                                GhostTranslations.LogWarning("Ldc_I4_1");
                                 goto code;
-                            }
                             else
                             {
                                 if (previous.opcode == OpCodes.Ldc_I4_S && previous.operand is int i_s)
                                 {
-                                    GhostTranslations.LogWarning("Ldc_I4_S-" + i_s);
                                     if (i_s == 1)
                                         goto code;
                                 }
                                 else if (previous.opcode == OpCodes.Ldc_I4 && previous.operand is int i)
                                 {
-                                    GhostTranslations.LogWarning("Ldc_I4-" + i);
                                     if (i == 1)
                                         goto code;
                                 }
@@ -322,17 +317,11 @@ namespace GhostTranslations
                 {
                     CodeInstruction instruction = instructionsEnumerator.Current;
                     if (instruction.opcode == OpCodes.Stloc_0)
-                    {
                         goto code;
-                    }
                     else if (instruction.opcode == OpCodes.Stloc_S && instruction.operand is int i_s && i_s == 0)
-                    {
                         goto code;
-                    }
                     else if (instruction.opcode == OpCodes.Stloc && instruction.operand is int i && i == 0)
-                    {
                         goto code;
-                    }
                     else
                     {
                         yield return instruction;
