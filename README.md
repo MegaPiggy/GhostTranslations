@@ -1,6 +1,6 @@
 # Ghost Translations
 
-You can now translate any of the Owelk's wall texts inside!
+You can now translate any of the Owelk's wall texts!
 
 There are only a few though.
 
