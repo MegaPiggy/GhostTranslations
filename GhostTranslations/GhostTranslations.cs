@@ -124,21 +124,21 @@ namespace GhostTranslations
             switch (name)
             {
                 case "Zone1":
-                    return "River Lowlands";
+                    return "<color=orange>River Lowlands</color>";
                 case "Zone2":
-                    return "Cinder Isles";
+                    return "<color=orange>Cinder Isles</color>";
                 case "JammingControlRoom_Zone4":
-                    return "Dam";
+                    return "<color=orange>Dam</color>";
                 case "DarkSideArrival":
-                    return "Dark Side Entrance";
+                    return "<color=orange>Dark Side Entrance</color>";
                 case "LightSideArrival":
-                    return "Light Side Entrance";
+                    return "<color=orange>Light Side Entrance</color>";
                 case "HiddenGorge":
-                    return "Hidden Gorge";
+                    return "<color=orange>Hidden Gorge</color>";
                 case "PrisonDocks":
                     return "<color=red>Keep Out</color>";
                 case "Underground":
-                    return "Prisoner's Sarcophagus";
+                    return "<color=orange>Prisoner's Sarcophagus</color>";
                 default:
                     GhostTranslations.LogError($"No text for sector \"{name}\"");
                     return string.Empty;
