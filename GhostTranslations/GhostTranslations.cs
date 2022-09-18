@@ -77,6 +77,16 @@ namespace GhostTranslations
             return newObj;
         }
 
+        public static T GetComponentInParent<T>(GameObject go, bool includeInactive) where T : class
+        {
+            using (var lst = Collections.TempCollection.GetList<T>())
+            {
+                go.GetComponentsInParent(includeInactive, lst);
+                return lst.Count > 0 ? lst[0] : null;
+            }
+        }
+
+
         internal static T Load<T>(string filename) => Instance.ModHelper.Storage.Load<T>(filename);
 
         internal static void Save<T>(T obj, string filename) => Instance.ModHelper.Storage.Save<T>(obj, filename);
@@ -105,7 +115,7 @@ namespace GhostTranslations
 
         private static void ReloadText(this GhostWallText __instance)
         {
-            string text = TextFromSector(__instance.GetComponentInParent<Sector>());
+            string text = TextFromSector(GhostTranslations.GetComponentInParent<Sector>(__instance.gameObject, true));
             if (!string.IsNullOrWhiteSpace(text))
                 __instance.LoadNewText(new NomaiXml(text));
             else
