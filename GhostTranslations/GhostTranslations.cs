@@ -120,6 +120,11 @@ namespace GhostTranslations
 
         private static string TextFromSector(Sector sector)
         {
+            if (sector == null)
+            {
+                GhostTranslations.LogError($"No sector has been given");
+                return string.Empty;
+            }
             string name = sector.name.Replace("Sector_","");
             switch (name)
             {
