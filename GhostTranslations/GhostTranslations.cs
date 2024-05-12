@@ -133,7 +133,41 @@ namespace GhostTranslations
                 case "Zone2":
                     return "<color=orange>Cinder Isles</color>";
                 case "JammingControlRoom_Zone4":
-                    return "<color=orange>Dam</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case Language.FRENCH:
+                            return "<color=orange>Barrage</color>";
+                        case Language.GERMAN:
+                            return "<color=orange>Talsperre</color>";
+                        case Language.ITALIAN:
+                            return "<color=orange>Diga</color>";
+                        case Language.JAPANESE:
+                            return "<color=orange>ダム</color>";
+                        case Language.KOREAN:
+                            return "<color=orange>댐</color>";
+                        case Language.POLISH:
+                            return "<color=orange>Zapora</color>";
+                        case Language.PORTUGUESE_BR:
+                            return "<color=orange>Barragem</color>";
+                        case Language.RUSSIAN:
+                            return "<color=orange>Плотина</color>";
+                        case Language.CHINESE_SIMPLE:
+                            return "<color=orange>水坝</color>";
+                        case Language.SPANISH_LA:
+                            return "<color=orange>Represa</color>";
+                        case Language.TURKISH:
+                            return "<color=orange>Baraj</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Přehrada</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Stífla</color>";
+                                default:
+                                    return "<color=orange>Dam</color>";
+                            }
+                    }
                 case "DarkSideArrival":
                     return "<color=orange>Dark Side Entrance</color>";
                 case "LightSideArrival":
@@ -141,7 +175,41 @@ namespace GhostTranslations
                 case "HiddenGorge":
                     return "<color=orange>Hidden Gorge</color>";
                 case "PrisonDocks":
-                    return "<color=red>Keep Out</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case Language.FRENCH:
+                            return "<color=orange>Entrée Interdite</color>";
+                        case Language.GERMAN:
+                            return "<color=orange>Eingang Verboten</color>";
+                        case Language.ITALIAN:
+                            return "<color=orange>Entrata Vietata</color>";
+                        case Language.JAPANESE:
+                            return "<color=orange>立入禁止</color>";
+                        case Language.KOREAN:
+                            return "<color=orange>출입 금지</color>";
+                        case Language.POLISH:
+                            return "<color=orange>Zakaz Wstępu</color>";
+                        case Language.PORTUGUESE_BR:
+                            return "<color=orange>Entrada Proibida</color>";
+                        case Language.RUSSIAN:
+                            return "<color=orange>Вход Воспрещён</color>";
+                        case Language.CHINESE_SIMPLE:
+                            return "<color=orange>禁行</color>";
+                        case Language.SPANISH_LA:
+                            return "<color=orange>Entrada Prohibida</color>";
+                        case Language.TURKISH:
+                            return "<color=orange>Girilmez</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Zákaz Vstupu</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Bannaður Aðgangur</color>";
+                                default:
+                                    return "<color=orange>Keep Out</color>";
+                            }
+                    }
                 case "Underground":
                     return "<color=orange>Prisoner's Sarcophagus</color>";
                 default:
