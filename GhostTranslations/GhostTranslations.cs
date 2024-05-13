@@ -178,40 +178,74 @@ namespace GhostTranslations
                     switch (PlayerData.GetSavedLanguage())
                     {
                         case Language.FRENCH:
-                            return "<color=orange>Entrée Interdite</color>";
+                            return "<color=orange>ENTRÉE INTERDITE</color>";
                         case Language.GERMAN:
-                            return "<color=orange>Eingang Verboten</color>";
+                            return "<color=orange>EINGANG VERBOTEN</color>";
                         case Language.ITALIAN:
-                            return "<color=orange>Entrata Vietata</color>";
+                            return "<color=orange>ENTRATA VIETATA</color>";
                         case Language.JAPANESE:
                             return "<color=orange>立入禁止</color>";
                         case Language.KOREAN:
                             return "<color=orange>출입 금지</color>";
                         case Language.POLISH:
-                            return "<color=orange>Zakaz Wstępu</color>";
+                            return "<color=orange>ZAKAZ WSTĘPU</color>";
                         case Language.PORTUGUESE_BR:
-                            return "<color=orange>Entrada Proibida</color>";
+                            return "<color=orange>ENTRADA PROIBIDA</color>";
                         case Language.RUSSIAN:
-                            return "<color=orange>Вход Воспрещён</color>";
+                            return "<color=orange>ВХОД ВОСПРЕЩЁН</color>";
                         case Language.CHINESE_SIMPLE:
                             return "<color=orange>禁行</color>";
                         case Language.SPANISH_LA:
-                            return "<color=orange>Entrada Prohibida</color>";
+                            return "<color=orange>ENTRADA PROHIBIDA</color>";
                         case Language.TURKISH:
-                            return "<color=orange>Girilmez</color>";
+                            return "<color=orange>GIRILMEZ</color>";
                         default:
                             switch (PlayerData.GetSavedLanguage().ToString())
                             {
                                 case "Czech":
-                                    return "<color=orange>Zákaz Vstupu</color>";
+                                    return "<color=orange>ZÁKAZ VSTUPU</color>";
                                 case "Íslenska":
-                                    return "<color=orange>Bannaður Aðgangur</color>";
+                                    return "<color=orange>BANNAÐUR AÐGANGUR</color>";
                                 default:
-                                    return "<color=orange>Keep Out</color>";
+                                    return "<color=orange>KEEP OUT</color>";
                             }
                     }
                 case "Underground":
-                    return "<color=orange>Prisoner's Sarcophagus</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case Language.FRENCH:
+                            return "<color=orange>Sarcophage du prisonnier</color>";
+                        case Language.GERMAN:
+                            return "<color=orange>Sarkophag des Häftling</color>";
+                        case Language.ITALIAN:
+                            return "<color=orange>Sarcofago del Prigioniero</color>";
+                        case Language.JAPANESE:
+                            return "<color=orange>囚人の石棺</color>";
+                        case Language.KOREAN:
+                            return "<color=orange>죄수의 석관</color>";
+                        case Language.POLISH:
+                            return "<color=orange>Sarkofag więzień</color>";
+                        case Language.PORTUGUESE_BR:
+                            return "<color=orange>Sarcófago do Prisioneiro</color>";
+                        case Language.RUSSIAN:
+                            return "<color=orange>Саркофаг узника</color>";
+                        case Language.CHINESE_SIMPLE:
+                            return "<color=orange>幽禁者的石棺</color>";
+                        case Language.SPANISH_LA:
+                            return "<color=orange>Sarcófago del prisionero</color>";
+                        case Language.TURKISH:
+                            return "<color=orange>Tutsak Lahit</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Trestancem sarkofág</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Sarkófags fanginn</color>";
+                                default:
+                                    return "<color=orange>Prisoner's Sarcophagus</color>";
+                            }
+                    }
                 default:
                     GhostTranslations.LogError($"No text for sector \"{name}\"");
                     return string.Empty;
