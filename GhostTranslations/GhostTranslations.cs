@@ -172,72 +172,72 @@ namespace GhostTranslations
                     switch (PlayerData.GetSavedLanguage())
                     {
                         case TextTranslation.Language.FRENCH:
-                            return "<color=orange>Entrée du face sombre</color>";
+                            return "Entrée du face sombre</color>";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Dunkleseite Eingang</color>";
+                            return "Dunkleseite Eingang</color>";
                         case TextTranslation.Language.ITALIAN:
-                            return "<color=orange>Ingresso dalla faccia oscuro</color>";
+                            return "Ingresso dalla faccia oscuro</color>";
                         case TextTranslation.Language.JAPANESE:
-                            return "<color=orange>暗部の玄関</color>";
+                            return "暗部の玄関</color>";
                         case TextTranslation.Language.KOREAN:
-                            return "<color=orange>어두운면 입구</color>";
+                            return "어두운면 입구</color>";
                         case TextTranslation.Language.POLISH:
-                            return "<color=orange>Ciemnej strony wejście</color>";
+                            return "Ciemnej strony wejście</color>";
                         case TextTranslation.Language.PORTUGUESE_BR:
-                            return "<color=orange>Entrada do lado escuro</color>";
+                            return "Entrada do lado escuro</color>";
                         case TextTranslation.Language.RUSSIAN:
-                            return "<color=orange>Чёрный боковой вход</color>";
+                            return "Чёрный боковой вход</color>";
                         case TextTranslation.Language.CHINESE_SIMPLE:
-                            return "<color=orange>暗侧入口</color>";
+                            return "暗侧入口</color>";
                         case TextTranslation.Language.SPANISH_LA:
-                            return "<color=orange>Entrada del lado oscuro</color>";
+                            return "Entrada del lado oscuro</color>";
                         case TextTranslation.Language.TURKISH:
-                            return "<color=orange>Karanlık taraf girişi</color>";
+                            return "Karanlık taraf girişi</color>";
                         default:
                             switch (PlayerData.GetSavedLanguage().ToString())
                             {
                                 case "Czech":
-                                    return "<color=orange>Vchod z tmavé strany</color>";
+                                    return "Vchod z tmavé strany</color>";
                                 case "Íslenska":
-                                    return "<color=orange>Dökkur hlið inngangur</color>";
+                                    return "Dökkur hlið inngangur</color>";
                                 default:
-                                    return "<color=orange>Dark Side Entrance</color>";
+                                    return "Dark Side Entrance</color>";
                             }
                     }
                 case "LightSideArrival":
                     switch (PlayerData.GetSavedLanguage())
                     {
                         case TextTranslation.Language.FRENCH:
-                            return "<color=orange>Entrée du face lumineuse</color>";
+                            return "Entrée du face lumineuse";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Helleseite Eingang</color>";
+                            return "Helleseite Eingang";
                         case TextTranslation.Language.ITALIAN:
-                            return "<color=orange>Ingresso dalla faccia chiaro</color>";
+                            return "Ingresso dalla faccia chiaro";
                         case TextTranslation.Language.JAPANESE:
-                            return "<color=orange>光部の玄関</color>";
+                            return "光部の玄関";
                         case TextTranslation.Language.KOREAN:
-                            return "<color=orange>가벼운면 입구</color>";
+                            return "가벼운면 입구";
                         case TextTranslation.Language.POLISH:
-                            return "<color=orange>Jasnej strony wejście</color>";
+                            return "Jasnej strony wejście";
                         case TextTranslation.Language.PORTUGUESE_BR:
-                            return "<color=orange>Entrada do lado iluminado</color>";
+                            return "Entrada do lado iluminado";
                         case TextTranslation.Language.RUSSIAN:
-                            return "<color=orange>Световой боковой вход</color>";
+                            return "Световой боковой вход";
                         case TextTranslation.Language.CHINESE_SIMPLE:
-                            return "<color=orange>明亮侧入口</color>";
+                            return "明亮侧入口";
                         case TextTranslation.Language.SPANISH_LA:
-                            return "<color=orange>Entrada del lado luminoso</color>";
+                            return "Entrada del lado luminoso";
                         case TextTranslation.Language.TURKISH:
-                            return "<color=orange>Parlak taraf girişi</color>";
+                            return "Parlak taraf girişi";
                         default:
                             switch (PlayerData.GetSavedLanguage().ToString())
                             {
                                 case "Czech":
-                                    return "<color=orange>Vchod z světlé strany</color>";
+                                    return "Vchod z světlé strany";
                                 case "Íslenska":
-                                    return "<color=orange>Bjart hlið inngangur</color>";
+                                    return "Bjart hlið inngangur";
                                 default:
-                                    return "<color=orange>Light Side Entrance</color>";
+                                    return "Light Side Entrance";
                             }
                     }
                 case "HiddenGorge":
