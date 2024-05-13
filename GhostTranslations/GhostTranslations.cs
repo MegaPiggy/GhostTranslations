@@ -408,7 +408,41 @@ namespace GhostTranslations
         public static string ReplaceNomai_IfOwelk(string text, NomaiText component)
         {
             if (component is GhostWallText)
-                return text.Replace("nomai", "owelk").Replace("Nomai", "Owelk").Replace("NOMAI", "OWELK").Replace("nomaï", "owelk").Replace("Nomaï", "Owelk").Replace("NOMAÏ", "OWELK").Replace("номаи", "овелк").Replace("Номаи", "Овелк").Replace("НОМАИ", "ОВЕЛК").Replace("挪麦", "猫头鹰麋鹿").Replace("노마이", "오웰크");
+                switch (PlayerData.GetSavedLanguage())
+                    {
+                        case Language.FRENCH:
+                            return text.Replace("nomaï", "hiboupiti");
+                        case Language.GERMAN:
+                            return text.Replace("Nomai", "Euleëlch");
+                        case Language.ITALIAN:
+                            return text.Replace("nomai", "gufolce");
+                        case Language.JAPANESE:
+                            return text.Replace("Nomai", "フクロジカ");
+                        case Language.KOREAN:
+                            return text.Replace("노마이", "올빼미고라니");
+                        case Language.POLISH:
+                            return text.Replace("Nomai", "Sowałoś");
+                        case Language.PORTUGUESE_BR:
+                            return text.Replace("Nomai", "Corujalce");
+                        case Language.RUSSIAN:
+                            return text.Replace("номаи", "совалось");
+                        case Language.CHINESE_SIMPLE:
+                            return text.Replace("挪麦", "猫头鹰麋鹿");
+                        case Language.SPANISH_LA:
+                            return text.Replace("nomai", "búhoalce");
+                        case Language.TURKISH:
+                            return text.Replace("Nomai", "Baykuyik");
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return text.Replace("Nomai", "Sovalos");
+                                case "Íslenska":
+                                    return text.Replace("Nómæ", "Elgugla");
+                                default:
+                                    return text.Replace("Nomai", "Owlk");
+                            }
+                    }
             return text;
         }
 
