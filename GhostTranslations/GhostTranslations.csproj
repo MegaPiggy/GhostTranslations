@@ -12,7 +12,6 @@
     <Authors>MegaPiggy</Authors>
     <AssemblyTitle>$(ProjectName)</AssemblyTitle>
     <Product>$(ProjectName)</Product>
-    <OutputPath>Build</OutputPath>
     <ModName>$(Authors).$(MSBuildProjectName)</ModName>
     <DebugType>portable</DebugType>
   </PropertyGroup>
