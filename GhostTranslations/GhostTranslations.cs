@@ -129,9 +129,9 @@ namespace GhostTranslations
             switch (name)
             {
                 case "Zone1":
-                    return "<color=orange>" + TextTranslation.Get().m_table.Get("River Lowlands") + "</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("River Lowlands") + "</color>";
                 case "Zone2":
-                    return "<color=orange>" + TextTranslation.Get().m_table.Get("Cinder Isles") + "</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Cinder Isles") + "</color>";
                 case "JammingControlRoom_Zone4":
                     switch (PlayerData.GetSavedLanguage())
                     {
@@ -241,7 +241,7 @@ namespace GhostTranslations
                             }
                     }
                 case "HiddenGorge":
-                    return "<color=orange>" + TextTranslation.Get().m_table.Get("Hidden Gorge") + "</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
                     switch (PlayerData.GetSavedLanguage())
                     {
