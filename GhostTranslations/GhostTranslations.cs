@@ -129,21 +129,191 @@ namespace GhostTranslations
             switch (name)
             {
                 case "Zone1":
-                    return "<color=orange>River Lowlands</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("River Lowlands") + "</color>";
                 case "Zone2":
-                    return "<color=orange>Cinder Isles</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Cinder Isles") + "</color>";
                 case "JammingControlRoom_Zone4":
-                    return "<color=orange>Dam</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return "<color=orange>Barrage</color>";
+                        case TextTranslation.Language.GERMAN:
+                            return "<color=orange>Talsperre</color>";
+                        case TextTranslation.Language.ITALIAN:
+                            return "<color=orange>Diga</color>";
+                        case TextTranslation.Language.JAPANESE:
+                            return "<color=orange>ダム</color>";
+                        case TextTranslation.Language.KOREAN:
+                            return "<color=orange>댐</color>";
+                        case TextTranslation.Language.POLISH:
+                            return "<color=orange>Zapora</color>";
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return "<color=orange>Barragem</color>";
+                        case TextTranslation.Language.RUSSIAN:
+                            return "<color=orange>Плотина</color>";
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return "<color=orange>水坝</color>";
+                        case TextTranslation.Language.SPANISH_LA:
+                            return "<color=orange>Represa</color>";
+                        case TextTranslation.Language.TURKISH:
+                            return "<color=orange>Baraj</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Přehrada</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Stífla</color>";
+                                default:
+                                    return "<color=orange>Dam</color>";
+                            }
+                    }
                 case "DarkSideArrival":
-                    return "<color=orange>Dark Side Entrance</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return "<color=orange>Entrée du face sombre</color>";
+                        case TextTranslation.Language.GERMAN:
+                            return "<color=orange>Dunkleseite Eingang</color>";
+                        case TextTranslation.Language.ITALIAN:
+                            return "<color=orange>Ingresso dalla faccia oscuro</color>";
+                        case TextTranslation.Language.JAPANESE:
+                            return "<color=orange>暗部の玄関</color>";
+                        case TextTranslation.Language.KOREAN:
+                            return "<color=orange>어두운면 입구</color>";
+                        case TextTranslation.Language.POLISH:
+                            return "<color=orange>Ciemnej strony wejście</color>";
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return "<color=orange>Entrada do lado escuro</color>";
+                        case TextTranslation.Language.RUSSIAN:
+                            return "<color=orange>Чёрный боковой вход</color>";
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return "<color=orange>暗侧入口</color>";
+                        case TextTranslation.Language.SPANISH_LA:
+                            return "<color=orange>Entrada del lado oscuro</color>";
+                        case TextTranslation.Language.TURKISH:
+                            return "<color=orange>Karanlık taraf girişi</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Vchod z tmavé strany</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Dökkur hlið inngangur</color>";
+                                default:
+                                    return "<color=orange>Dark Side Entrance</color>";
+                            }
+                    }
                 case "LightSideArrival":
-                    return "<color=orange>Light Side Entrance</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return "<color=orange>Entrée du face lumineuse</color>";
+                        case TextTranslation.Language.GERMAN:
+                            return "<color=orange>Helleseite Eingang</color>";
+                        case TextTranslation.Language.ITALIAN:
+                            return "<color=orange>Ingresso dalla faccia chiaro</color>";
+                        case TextTranslation.Language.JAPANESE:
+                            return "<color=orange>光部の玄関</color>";
+                        case TextTranslation.Language.KOREAN:
+                            return "<color=orange>가벼운면 입구</color>";
+                        case TextTranslation.Language.POLISH:
+                            return "<color=orange>Jasnej strony wejście</color>";
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return "<color=orange>Entrada do lado iluminado</color>";
+                        case TextTranslation.Language.RUSSIAN:
+                            return "<color=orange>Световой боковой вход</color>";
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return "<color=orange>明亮侧入口</color>";
+                        case TextTranslation.Language.SPANISH_LA:
+                            return "<color=orange>Entrada del lado luminoso</color>";
+                        case TextTranslation.Language.TURKISH:
+                            return "<color=orange>Parlak taraf girişi</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Vchod z světlé strany</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Bjart hlið inngangur</color>";
+                                default:
+                                    return "<color=orange>Light Side Entrance</color>";
+                            }
+                    }
                 case "HiddenGorge":
-                    return "<color=orange>Hidden Gorge</color>";
+                    return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
-                    return "<color=red>Keep Out</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return "<color=red>ENTRÉE INTERDITE</color>";
+                        case TextTranslation.Language.GERMAN:
+                            return "<color=red>EINGANG VERBOTEN</color>";
+                        case TextTranslation.Language.ITALIAN:
+                            return "<color=red>ENTRATA VIETATA</color>";
+                        case TextTranslation.Language.JAPANESE:
+                            return "<color=red>立入禁止</color>";
+                        case TextTranslation.Language.KOREAN:
+                            return "<color=red>출입 금지</color>";
+                        case TextTranslation.Language.POLISH:
+                            return "<color=red>ZAKAZ WSTĘPU</color>";
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return "<color=red>ENTRADA PROIBIDA</color>";
+                        case TextTranslation.Language.RUSSIAN:
+                            return "<color=red>ВХОД ВОСПРЕЩЁН</color>";
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return "<color=red>禁行</color>";
+                        case TextTranslation.Language.SPANISH_LA:
+                            return "<color=red>ENTRADA PROHIBIDA</color>";
+                        case TextTranslation.Language.TURKISH:
+                            return "<color=red>GIRILMEZ</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=red>ZÁKAZ VSTUPU</color>";
+                                case "Íslenska":
+                                    return "<color=red>BANNAÐUR AÐGANGUR</color>";
+                                default:
+                                    return "<color=red>KEEP OUT</color>";
+                            }
+                    }
                 case "Underground":
-                    return "<color=orange>Prisoner's Sarcophagus</color>";
+                    switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return "<color=orange>Sarcophage du prisonnier</color>";
+                        case TextTranslation.Language.GERMAN:
+                            return "<color=orange>Sarkophag des Häftling</color>";
+                        case TextTranslation.Language.ITALIAN:
+                            return "<color=orange>Sarcofago del Prigioniero</color>";
+                        case TextTranslation.Language.JAPANESE:
+                            return "<color=orange>囚人の石棺</color>";
+                        case TextTranslation.Language.KOREAN:
+                            return "<color=orange>죄수의 석관</color>";
+                        case TextTranslation.Language.POLISH:
+                            return "<color=orange>Sarkofag więzień</color>";
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return "<color=orange>Sarcófago do Prisioneiro</color>";
+                        case TextTranslation.Language.RUSSIAN:
+                            return "<color=orange>Саркофаг узника</color>";
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return "<color=orange>幽禁者的石棺</color>";
+                        case TextTranslation.Language.SPANISH_LA:
+                            return "<color=orange>Sarcófago del prisionero</color>";
+                        case TextTranslation.Language.TURKISH:
+                            return "<color=orange>Tutsak Lahit</color>";
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return "<color=orange>Trestancem sarkofág</color>";
+                                case "Íslenska":
+                                    return "<color=orange>Sarkófags fanginn</color>";
+                                default:
+                                    return "<color=orange>Prisoner's Sarcophagus</color>";
+                            }
+                    }
                 default:
                     GhostTranslations.LogError($"No text for sector \"{name}\"");
                     return string.Empty;
@@ -306,7 +476,41 @@ namespace GhostTranslations
         public static string ReplaceNomai_IfOwelk(string text, NomaiText component)
         {
             if (component is GhostWallText)
-                return text.Replace("nomai", "owelk").Replace("Nomai", "Owelk").Replace("NOMAI", "OWELK").Replace("nomaï", "owelk").Replace("Nomaï", "Owelk").Replace("NOMAÏ", "OWELK").Replace("номаи", "овелк").Replace("Номаи", "Овелк").Replace("НОМАИ", "ОВЕЛК").Replace("挪麦", "猫头鹰麋鹿").Replace("노마이", "오웰크");
+                switch (PlayerData.GetSavedLanguage())
+                    {
+                        case TextTranslation.Language.FRENCH:
+                            return text.Replace("nomaï", "hiboupiti");
+                        case TextTranslation.Language.GERMAN:
+                            return text.Replace("Nomai", "Euleëlch");
+                        case TextTranslation.Language.ITALIAN:
+                            return text.Replace("nomai", "gufolce");
+                        case TextTranslation.Language.JAPANESE:
+                            return text.Replace("Nomai", "フクロジカ");
+                        case TextTranslation.Language.KOREAN:
+                            return text.Replace("노마이", "올빼미고라니");
+                        case TextTranslation.Language.POLISH:
+                            return text.Replace("Nomai", "Sowałoś");
+                        case TextTranslation.Language.PORTUGUESE_BR:
+                            return text.Replace("Nomai", "Corujalce");
+                        case TextTranslation.Language.RUSSIAN:
+                            return text.Replace("номаи", "совалось");
+                        case TextTranslation.Language.CHINESE_SIMPLE:
+                            return text.Replace("挪麦", "猫头鹰麋鹿");
+                        case TextTranslation.Language.SPANISH_LA:
+                            return text.Replace("nomai", "búhoalce");
+                        case TextTranslation.Language.TURKISH:
+                            return text.Replace("Nomai", "Baykuyik");
+                        default:
+                            switch (PlayerData.GetSavedLanguage().ToString())
+                            {
+                                case "Czech":
+                                    return text.Replace("Nomai", "Sovalos");
+                                case "Íslenska":
+                                    return text.Replace("Nómæ", "Elgugla");
+                                default:
+                                    return text.Replace("Nomai", "Owlk");
+                            }
+                    }
             return text;
         }
 
