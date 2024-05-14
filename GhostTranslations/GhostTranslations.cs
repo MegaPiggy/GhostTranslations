@@ -473,42 +473,42 @@ namespace GhostTranslations
             }
         }
 
-        public static string ReplaceNomai_IfOwelk(string text, NomaiText component)
+        public static string ReplaceNomai_IfInhabitant(string text, NomaiText component)
         {
             if (component is GhostWallText)
                 switch (PlayerData.GetSavedLanguage())
                     {
                         case TextTranslation.Language.FRENCH:
-                            return text.Replace("nomaï", "hiboupiti");
+                            return text.Replace("nomaï", "habitants");
                         case TextTranslation.Language.GERMAN:
-                            return text.Replace("Nomai", "Euleëlch");
+                            return text.Replace("Nomai", "Bewohner");
                         case TextTranslation.Language.ITALIAN:
-                            return text.Replace("nomai", "gufolce");
+                            return text.Replace("nomai", "abitanti");
                         case TextTranslation.Language.JAPANESE:
-                            return text.Replace("Nomai", "フクロジカ");
+                            return text.Replace("Nomai", "住人");
                         case TextTranslation.Language.KOREAN:
-                            return text.Replace("노마이", "올빼미고라니");
+                            return text.Replace("노마이", "거주민들이");
                         case TextTranslation.Language.POLISH:
-                            return text.Replace("Nomai", "Sowałoś");
+                            return text.Replace("Nomai", "Mieszkańcy");
                         case TextTranslation.Language.PORTUGUESE_BR:
-                            return text.Replace("Nomai", "Corujalce");
+                            return text.Replace("Nomai", "Habitantes");
                         case TextTranslation.Language.RUSSIAN:
-                            return text.Replace("номаи", "совалось");
+                            return text.Replace("номаи", "обитатели");
                         case TextTranslation.Language.CHINESE_SIMPLE:
-                            return text.Replace("挪麦", "猫头鹰麋鹿");
+                            return text.Replace("挪麦", "居民");
                         case TextTranslation.Language.SPANISH_LA:
-                            return text.Replace("nomai", "búhoalce");
+                            return text.Replace("nomai", "habitants");
                         case TextTranslation.Language.TURKISH:
-                            return text.Replace("Nomai", "Baykuyik");
+                            return text.Replace("Nomai", "Yerlilerini");
                         default:
                             switch (PlayerData.GetSavedLanguage().ToString())
                             {
                                 case "Czech":
-                                    return text.Replace("Nomai", "Sovalos");
+                                    return text.Replace("Nomai", "Obyvatelé");
                                 case "Íslenska":
-                                    return text.Replace("Nómæ", "Elgugla");
+                                    return text.Replace("Nómæ", "Íbúa");
                                 default:
-                                    return text.Replace("Nomai", "Owlk");
+                                    return text.Replace("Nomai", "Inhabitants");
                             }
                     }
             return text;
@@ -542,7 +542,7 @@ namespace GhostTranslations
                     ldarg.labels = instruction.labels;
                     yield return ldarg;
                     yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(NomaiTranslatorProp), nameof(NomaiTranslatorProp._nomaiTextComponent)));
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Patches), nameof(Patches.ReplaceNomai_IfOwelk)));
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Patches), nameof(Patches.ReplaceNomai_IfInhabitant)));
                     yield return new CodeInstruction(OpCodes.Stloc_0);
                 next:
                     previous = instruction;
