@@ -125,7 +125,9 @@ namespace GhostTranslations
                 GhostTranslations.LogError($"No sector has been given");
                 return string.Empty;
             }
+            var language = PlayerData.GetSavedLanguage();
             string name = sector.name.Replace("Sector_","");
+            GhostTranslations.LogInfo("Getting text from sector " + name + " for language: " + language.ToString());
             switch (name)
             {
                 case "Zone1":
@@ -133,7 +135,7 @@ namespace GhostTranslations
                 case "Zone2":
                     return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Cinder Isles") + "</color>";
                 case "JammingControlRoom_Zone4":
-                    switch (PlayerData.GetSavedLanguage())
+                    switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Barrage</color>";
@@ -158,7 +160,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return "<color=orange>Baraj</color>";
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=orange>Přehrada</color>";
@@ -169,7 +171,7 @@ namespace GhostTranslations
                             }
                     }
                 case "DarkSideArrival":
-                    switch (PlayerData.GetSavedLanguage())
+                    switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Entrée du face sombre</color>";
@@ -194,7 +196,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return "<color=orange>Karanlık taraf girişi</color>";
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=orange>Vchod z tmavé strany</color>";
@@ -205,7 +207,7 @@ namespace GhostTranslations
                             }
                     }
                 case "LightSideArrival":
-                    switch (PlayerData.GetSavedLanguage())
+                    switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Entrée du face lumineuse</color>";
@@ -230,7 +232,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return "<color=orange>Parlak taraf girişi</color>";
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=orange>Vchod z světlé strany</color>";
@@ -243,7 +245,7 @@ namespace GhostTranslations
                 case "HiddenGorge":
                     return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
-                    switch (PlayerData.GetSavedLanguage())
+                    switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return "<color=red>ENTRÉE INTERDITE</color>";
@@ -268,7 +270,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return "<color=red>GIRILMEZ</color>";
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=red>ZÁKAZ VSTUPU</color>";
@@ -279,7 +281,7 @@ namespace GhostTranslations
                             }
                     }
                 case "Underground":
-                    switch (PlayerData.GetSavedLanguage())
+                    switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Sarcophage du prisonnier</color>";
@@ -304,7 +306,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return "<color=orange>Tutsak Lahit</color>";
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=orange>Trestancem sarkofág</color>";
@@ -476,7 +478,10 @@ namespace GhostTranslations
         public static string ReplaceNomai_IfInhabitant(string text, NomaiText component)
         {
             if (component is GhostWallText)
-                switch (PlayerData.GetSavedLanguage())
+            {
+                var language = PlayerData.GetSavedLanguage();
+                GhostTranslations.LogInfo("Replacing Nomai with Inhabitant for language: " + language.ToString());
+                switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
                             return text.Replace("nomaï", "habitants");
@@ -501,7 +506,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.TURKISH:
                             return text.Replace("Nomai", "Yerlilerini");
                         default:
-                            switch (PlayerData.GetSavedLanguage().ToString())
+                            switch (language.ToString())
                             {
                                 case "Czech":
                                     return text.Replace("Nomai", "Obyvatelé");
@@ -511,6 +516,7 @@ namespace GhostTranslations
                                     return text.Replace("Nomai", "Inhabitants");
                             }
                     }
+            }
             return text;
         }
 
