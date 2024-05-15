@@ -126,7 +126,7 @@ namespace GhostTranslations
                 return string.Empty;
             }
             var language = PlayerData.GetSavedLanguage();
-            string name = sector.name.Replace("Sector_","");
+            string name = sector.name.Replace("Sector_", "");
             GhostTranslations.LogInfo("Getting text from sector " + name + " for language: " + language.ToString());
             switch (name)
             {
@@ -482,40 +482,40 @@ namespace GhostTranslations
                 var language = PlayerData.GetSavedLanguage();
                 GhostTranslations.LogInfo("Replacing Nomai with Inhabitant for language: " + language.ToString());
                 switch (language)
-                    {
-                        case TextTranslation.Language.FRENCH:
-                            return text.Replace("nomaï", "habitants");
-                        case TextTranslation.Language.GERMAN:
-                            return text.Replace("Nomai", "Bewohner");
-                        case TextTranslation.Language.ITALIAN:
-                            return text.Replace("nomai", "abitanti");
-                        case TextTranslation.Language.JAPANESE:
-                            return text.Replace("Nomai", "住人");
-                        case TextTranslation.Language.KOREAN:
-                            return text.Replace("노마이", "거주민들이");
-                        case TextTranslation.Language.POLISH:
-                            return text.Replace("Nomai", "Mieszkańcy");
-                        case TextTranslation.Language.PORTUGUESE_BR:
-                            return text.Replace("Nomai", "Habitantes");
-                        case TextTranslation.Language.RUSSIAN:
-                            return text.Replace("номаи", "обитатели");
-                        case TextTranslation.Language.CHINESE_SIMPLE:
-                            return text.Replace("挪麦", "居民");
-                        case TextTranslation.Language.SPANISH_LA:
-                            return text.Replace("nomai", "habitants");
-                        case TextTranslation.Language.TURKISH:
-                            return text.Replace("Nomai", "Yerlilerini");
-                        default:
-                            switch (language.ToString())
-                            {
-                                case "Czech":
-                                    return text.Replace("Nomai", "Obyvatelé");
-                                case "Íslenska":
-                                    return text.Replace("Nómæ", "Íbúa");
-                                default:
-                                    return text.Replace("Nomai", "Inhabitants");
-                            }
-                    }
+                {
+                    case TextTranslation.Language.FRENCH:
+                        return text.Replace("nomaï", "habitants");
+                    case TextTranslation.Language.GERMAN:
+                        return text.Replace("Nomai", "Bewohner");
+                    case TextTranslation.Language.ITALIAN:
+                        return text.Replace("nomai", "abitanti");
+                    case TextTranslation.Language.JAPANESE:
+                        return text.Replace("Nomai", "住人");
+                    case TextTranslation.Language.KOREAN:
+                        return text.Replace("노마이", "거주민들이");
+                    case TextTranslation.Language.POLISH:
+                        return text.Replace("Nomai", "Mieszkańcy");
+                    case TextTranslation.Language.PORTUGUESE_BR:
+                        return text.Replace("Nomai", "Habitantes");
+                    case TextTranslation.Language.RUSSIAN:
+                        return text.Replace("номаи", "обитатели");
+                    case TextTranslation.Language.CHINESE_SIMPLE:
+                        return text.Replace("挪麦", "居民");
+                    case TextTranslation.Language.SPANISH_LA:
+                        return text.Replace("nomai", "habitants");
+                    case TextTranslation.Language.TURKISH:
+                        return text.Replace("Nomai", "Yerlilerini");
+                    default:
+                        switch (language.ToString())
+                        {
+                            case "Czech":
+                                return text.Replace("Nomai", "Obyvatelé");
+                            case "Íslenska":
+                                return text.Replace("Nómæ", "Íbúa");
+                            default:
+                                return text.Replace("Nomai", "Inhabitants");
+                        }
+                }
             }
             return text;
         }
