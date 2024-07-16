@@ -105,7 +105,7 @@ namespace GhostTranslations
 
         private static void ReloadText(this GhostWallText __instance)
         {
-            string text = TextFromSector(__instance.GetComponentInParent<Sector>());
+            string text = TextFromSector(__instance.GetComponentInParent<Sector>(true));
             if (!string.IsNullOrWhiteSpace(text))
                 __instance.LoadNewText(new NomaiXml(text));
             else
@@ -116,7 +116,15 @@ namespace GhostTranslations
             }
         }
 
+        private static T GetComponentInParent<T>(this Component component, bool includeInactive) => component.GetComponentsInParent<T>(includeInactive).FirstOrDefault();
+
         private static void LoadNewText(this GhostWallText __instance, NomaiXml xml) => LoadNewText(__instance, xml.ToTextAsset());
+
+        public static string GetPath(this Transform current)
+        {
+            if (current.parent == null) return current.name;
+            return current.parent.GetPath() + "/" + current.name;
+        }
 
         private static string TextFromSector(Sector sector)
         {
@@ -251,6 +259,7 @@ namespace GhostTranslations
                 case "HiddenGorge":
                     return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
+                case "CaveSector":
                     switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
@@ -326,6 +335,9 @@ namespace GhostTranslations
                                     return "<color=orange>Prisoner's Sarcophagus</color>";
                             }
                     }
+                case "suburb_area":
+                    GhostTranslations.LogError($"No text for Eyes of the Past yet");
+                    return string.Empty;
                 default:
                     GhostTranslations.LogError($"No text for sector \"{name}\"");
                     return string.Empty;
