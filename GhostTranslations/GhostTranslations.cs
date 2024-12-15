@@ -178,7 +178,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Entrée du face sombre</color>";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Dunkleseite Eingang</color>";
+                            return "<color=orange>Eingang dunkle Seite</color>";
                         case TextTranslation.Language.ITALIAN:
                             return "<color=orange>Ingresso dalla faccia oscuro</color>";
                         case TextTranslation.Language.JAPANESE:
@@ -216,7 +216,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Entrée du face lumineuse</color>";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Helleseite Eingang</color>";
+                            return "<color=orange>Eingang helle Seite</color>";
                         case TextTranslation.Language.ITALIAN:
                             return "<color=orange>Ingresso dalla faccia chiaro</color>";
                         case TextTranslation.Language.JAPANESE:
@@ -294,7 +294,7 @@ namespace GhostTranslations
                         case TextTranslation.Language.FRENCH:
                             return "<color=orange>Sarcophage du prisonnier</color>";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Sarkophag des Häftling</color>";
+                            return "<color=orange>Kammer des Häftlings</color>";
                         case TextTranslation.Language.ITALIAN:
                             return "<color=orange>Sarcofago del Prigioniero</color>";
                         case TextTranslation.Language.JAPANESE:
