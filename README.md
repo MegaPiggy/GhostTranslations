@@ -6,11 +6,11 @@ There are only a few though.
 
 - River Lowlands Sign (x2)
 - Cinder Isles Sign
-- Dam Sign
+- Reservoir Sign
 - Hidden Gorge Sign
 - Light Side Entrance
 - Dark Side Entrance
-- Prisoner Keep Out Sign (x2)
+- Prisoner Keep Out Sign (x3)
 - Prisoner Sarcophagus Interface
 
 # Screenshot
