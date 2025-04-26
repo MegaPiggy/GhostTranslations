@@ -64,6 +64,26 @@ namespace GhostTranslations
                     wallText._turnOffFlashlight = false;
                     wallText._textLine = Arc1.GetAddComponent<NomaiTextLine>();
                 }
+                GameObject SignArc1 = InstantiateInactive(GameObject.Find("RingWorld_Body/Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonControlRoom_Zone4/Interactables_PrisonControlRoom/Props_IP_DoNotEnterSign/Arc_TestAlienWriting/Arc 1"));
+                GameObject DreamWorldSign = GameObject.Find("DreamWorld_Body/Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/FourWayBuilding/Props_IP_DW_DoNotEnterSign");
+                if (DreamWorldSign != null)
+                {
+                    SignArc1.transform.parent = DreamWorldSign.transform;
+                    SignArc1.transform.localPosition = new Vector3(-0.078f, 0.7108f, -0.0639f);
+                    SignArc1.transform.localRotation = Quaternion.Euler(0, 270, 90);
+                    SignArc1.transform.localScale = new Vector3(0.3644f, 0.1307f, 0.3644f);
+                    SignArc1.SetActive(true);
+                    BoxCollider collider = DreamWorldSign.AddComponent<BoxCollider>();
+                    collider.center = new Vector3(0.0529f, -0.3f, 0);
+                    collider.size = new Vector3(2.12f, 4, 0.5f);
+                    collider.isTrigger = true;
+                    collider.contactOffset = 0.01f;
+                    GhostWallText wallText = DreamWorldSign.AddComponent<GhostWallText>();
+                    wallText._minimumReadableDistance = 1;
+                    wallText._interactRange = 5;
+                    wallText._turnOffFlashlight = false;
+                    wallText._textLine = SignArc1.GetAddComponent<NomaiTextLine>();
+                }
             };
         }
 
@@ -259,6 +279,7 @@ namespace GhostTranslations
                 case "HiddenGorge":
                     return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
+                case "DreamZone_2":
                 case "CaveSector":
                     switch (language)
                     {
