@@ -170,6 +170,10 @@ namespace GhostTranslations
                                     return "<color=orange>Dökkur hlið inngangur</color>";
                                 case "Andalûh":
                                     return "<color=orange>Entrá der lao ôccuro</color>";
+                                case "UKRAINIAN":
+                                    return "<color=orange>Вхід у темну сторону</color>";
+                                case "Euskara":
+                                    return "<color=orange>Ilunaren aldeko sarrera</color>";
                                 default:
                                     return "<color=orange>Dark Side Entrance</color>";
                             }
@@ -208,6 +212,10 @@ namespace GhostTranslations
                                     return "<color=orange>Bjart hlið inngangur</color>";
                                 case "Andalûh":
                                     return "<color=orange>Entrá der lao luminoço</color>";
+                                case "UKRAINIAN":
+                                    return "<color=orange>Вхід у світлу сторону</color>";
+                                case "Euskara":
+                                    return "<color=orange>Argiaren aldeko sarrera</color>";
                                 default:
                                     return "<color=orange>Light Side Entrance</color>";
                             }
@@ -248,6 +256,10 @@ namespace GhostTranslations
                                     return "<color=red>BANNAÐUR AÐGANGUR</color>";
                                 case "Andalûh":
                                     return "<color=red>ENTRÁ PROIBIDA</color>";
+                                case "UKRAINIAN":
+                                    return "<color=orange>НЕ ВХОДИТИ</color>";
+                                case "Euskara":
+                                    return "<color=orange>EZ SARTU</color>";
                                 default:
                                     return "<color=red>KEEP OUT</color>";
                             }
@@ -286,6 +298,10 @@ namespace GhostTranslations
                                     return "<color=orange>Sarkófags fanginn</color>";
                                 case "Andalûh":
                                     return "<color=orange>Çarcófago der priçionero</color>";
+                                case "UKRAINIAN":
+                                    return "<color=orange>Саркофаг в'язня</color>";
+                                case "Euskara":
+                                    return "<color=orange>Presoaren sarkofagoa</color>";
                                 default:
                                     return "<color=orange>Prisoner's Sarcophagus</color>";
                             }
@@ -488,6 +504,10 @@ namespace GhostTranslations
                                 return text.Replace("Nómæ", "Íbúa");
                             case "Andalûh":
                                 return text.Replace("nomai", "abitantê");
+                            case "UKRAINIAN":
+                                return text.Replace("номайський", "обитателей");
+                            case "Euskara":
+                                return text.Replace("Nomai", "Biztanleak");
                             default:
                                 return text.Replace("Nomai", "Inhabitants");
                         }
