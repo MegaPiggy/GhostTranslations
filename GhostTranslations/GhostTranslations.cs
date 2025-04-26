@@ -125,6 +125,7 @@ namespace GhostTranslations
 
         private static void ReloadText(this GhostWallText __instance)
         {
+            GhostTranslations.LogInfo($"Loading text for \"{__instance.transform.GetPath()}\"");
             string text = TextFromSector(__instance.GetComponentInParent<Sector>(true));
             if (!string.IsNullOrWhiteSpace(text))
                 __instance.LoadNewText(new NomaiXml(text));
@@ -356,11 +357,21 @@ namespace GhostTranslations
                                     return "<color=orange>Prisoner's Sarcophagus</color>";
                             }
                     }
+                case "DreamZone_4":
+                    GhostTranslations.LogError($"No text for The Stranger They Are yet");
+                    return string.Empty;
                 case "suburb_area":
                     GhostTranslations.LogError($"No text for Eyes of the Past yet");
                     return string.Empty;
+                case "Sector":
+                    var bodyName = sector.GetAttachedOWRigidbody().name;
+                    if (bodyName == "PreBramble_Body" || bodyName == "PreBramble_Archives_Body" || bodyName == "DarkerBramble_Hideout_Body" || bodyName == "AnglersEye_Body")
+                        GhostTranslations.LogError($"No text for The Stranger They Are yet");
+                    else
+                        GhostTranslations.LogError($"No text \"{sector.GetAttachedOWRigidbody().name}\" yet");
+                    return string.Empty;
                 default:
-                    GhostTranslations.LogError($"No text for sector \"{name}\"");
+                    GhostTranslations.LogError($"No text for sector \"{name}\" in \"{sector.GetAttachedOWRigidbody().name}\"");
                     return string.Empty;
             }
         }
