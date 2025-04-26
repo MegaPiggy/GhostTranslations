@@ -348,7 +348,7 @@ namespace GhostTranslations
                     if (bodyName == "PreBramble_Body" || bodyName == "PreBramble_Archives_Body" || bodyName == "DarkerBramble_Hideout_Body" || bodyName == "AnglersEye_Body")
                         GhostTranslations.LogError($"No text for The Stranger They Are yet");
                     else
-                        GhostTranslations.LogError($"No text \"{sector.GetAttachedOWRigidbody().name}\" yet");
+                        GhostTranslations.LogError($"No text for \"{sector.GetAttachedOWRigidbody().name}\" yet");
                     return string.Empty;
                 default:
                     GhostTranslations.LogError($"No text for sector \"{name}\" in \"{sector.GetAttachedOWRigidbody().name}\"");
