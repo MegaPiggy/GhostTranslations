@@ -138,38 +138,38 @@ namespace GhostTranslations
                     switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
-                            return "<color=orange>Barrage</color>";
+                            return "<color=orange>Réservoir</color>";
                         case TextTranslation.Language.GERMAN:
-                            return "<color=orange>Talsperre</color>";
+                            return "<color=orange>Reservoir</color>";
                         case TextTranslation.Language.ITALIAN:
-                            return "<color=orange>Diga</color>";
+                            return "<color=orange>Bacino idrico</color>";
                         case TextTranslation.Language.JAPANESE:
-                            return "<color=orange>ダム</color>";
+                            return "<color=orange>貯水池</color>";
                         case TextTranslation.Language.KOREAN:
-                            return "<color=orange>댐</color>";
+                            return "<color=orange>저수지</color>";
                         case TextTranslation.Language.POLISH:
-                            return "<color=orange>Zapora</color>";
+                            return "<color=orange>Zbiornik wodny</color>";
                         case TextTranslation.Language.PORTUGUESE_BR:
-                            return "<color=orange>Barragem</color>";
+                            return "<color=orange>Reservatório</color>";
                         case TextTranslation.Language.RUSSIAN:
-                            return "<color=orange>Плотина</color>";
+                            return "<color=orange>Водоём</color>";
                         case TextTranslation.Language.CHINESE_SIMPLE:
-                            return "<color=orange>水坝</color>";
+                            return "<color=orange>水库</color>";
                         case TextTranslation.Language.SPANISH_LA:
                             return "<color=orange>Represa</color>";
                         case TextTranslation.Language.TURKISH:
-                            return "<color=orange>Baraj</color>";
+                            return "<color=orange>Rezervuar</color>";
                         default:
                             switch (language.ToString())
                             {
                                 case "Czech":
                                     return "<color=orange>Přehrada</color>";
                                 case "Íslenska":
-                                    return "<color=orange>Stífla</color>";
+                                    return "<color=orange>Uppistöðulónið</color>";
                                 case "Andalûh":
                                     return "<color=orange>Repreça</color>";
                                 default:
-                                    return "<color=orange>Dam</color>";
+                                    return "<color=orange>Reservoir</color>";
                             }
                     }
                 case "DarkSideArrival":
