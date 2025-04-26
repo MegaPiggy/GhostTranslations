@@ -64,6 +64,26 @@ namespace GhostTranslations
                     wallText._turnOffFlashlight = false;
                     wallText._textLine = Arc1.GetAddComponent<NomaiTextLine>();
                 }
+                GameObject SignArc1 = InstantiateInactive(GameObject.Find("RingWorld_Body/Sector_RingInterior/Sector_Zone4/Sector_PrisonDocks/Structures_PrisonDocks/PrisonControlRoom_Zone4/Interactables_PrisonControlRoom/Props_IP_DoNotEnterSign/Arc_TestAlienWriting/Arc 1"));
+                GameObject DreamWorldSign = GameObject.Find("DreamWorld_Body/Sector_DreamWorld/Sector_DreamZone_2/Structure_DreamZone_2/LowerLevel/FourWayBuilding/Props_IP_DW_DoNotEnterSign");
+                if (DreamWorldSign != null)
+                {
+                    SignArc1.transform.parent = DreamWorldSign.transform;
+                    SignArc1.transform.localPosition = new Vector3(-0.078f, 0.7108f, -0.0639f);
+                    SignArc1.transform.localRotation = Quaternion.Euler(0, 270, 90);
+                    SignArc1.transform.localScale = new Vector3(0.3644f, 0.1307f, 0.3644f);
+                    SignArc1.SetActive(true);
+                    BoxCollider collider = DreamWorldSign.AddComponent<BoxCollider>();
+                    collider.center = new Vector3(0.0529f, -0.3f, 0);
+                    collider.size = new Vector3(2.12f, 4, 0.5f);
+                    collider.isTrigger = true;
+                    collider.contactOffset = 0.01f;
+                    GhostWallText wallText = DreamWorldSign.AddComponent<GhostWallText>();
+                    wallText._minimumReadableDistance = 1;
+                    wallText._interactRange = 5;
+                    wallText._turnOffFlashlight = false;
+                    wallText._textLine = SignArc1.GetAddComponent<NomaiTextLine>();
+                }
             };
         }
 
@@ -105,7 +125,8 @@ namespace GhostTranslations
 
         private static void ReloadText(this GhostWallText __instance)
         {
-            string text = TextFromSector(__instance.GetComponentInParent<Sector>());
+            GhostTranslations.LogInfo($"Loading text for \"{__instance.transform.GetPath()}\"");
+            string text = TextFromSector(__instance.GetComponentInParent<Sector>(true));
             if (!string.IsNullOrWhiteSpace(text))
                 __instance.LoadNewText(new NomaiXml(text));
             else
@@ -116,7 +137,15 @@ namespace GhostTranslations
             }
         }
 
+        private static T GetComponentInParent<T>(this Component component, bool includeInactive) => component.GetComponentsInParent<T>(includeInactive).FirstOrDefault();
+
         private static void LoadNewText(this GhostWallText __instance, NomaiXml xml) => LoadNewText(__instance, xml.ToTextAsset());
+
+        public static string GetPath(this Transform current)
+        {
+            if (current.parent == null) return current.name;
+            return current.parent.GetPath() + "/" + current.name;
+        }
 
         private static string TextFromSector(Sector sector)
         {
@@ -223,6 +252,8 @@ namespace GhostTranslations
                 case "HiddenGorge":
                     return "<color=orange>" + TextTranslation.Get().m_table.GetShipLog("Hidden Gorge") + "</color>";
                 case "PrisonDocks":
+                case "DreamZone_2":
+                case "CaveSector":
                     switch (language)
                     {
                         case TextTranslation.Language.FRENCH:
@@ -306,8 +337,21 @@ namespace GhostTranslations
                                     return "<color=orange>Prisoner's Sarcophagus</color>";
                             }
                     }
+                case "DreamZone_4":
+                    GhostTranslations.LogError($"No text for The Stranger They Are yet");
+                    return string.Empty;
+                case "suburb_area":
+                    GhostTranslations.LogError($"No text for Eyes of the Past yet");
+                    return string.Empty;
+                case "Sector":
+                    var bodyName = sector.GetAttachedOWRigidbody().name;
+                    if (bodyName == "PreBramble_Body" || bodyName == "PreBramble_Archives_Body" || bodyName == "DarkerBramble_Hideout_Body" || bodyName == "AnglersEye_Body")
+                        GhostTranslations.LogError($"No text for The Stranger They Are yet");
+                    else
+                        GhostTranslations.LogError($"No text \"{sector.GetAttachedOWRigidbody().name}\" yet");
+                    return string.Empty;
                 default:
-                    GhostTranslations.LogError($"No text for sector \"{name}\"");
+                    GhostTranslations.LogError($"No text for sector \"{name}\" in \"{sector.GetAttachedOWRigidbody().name}\"");
                     return string.Empty;
             }
         }
